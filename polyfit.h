@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QAbstractButton>
+#include "polyfitalgo.h"
 
 namespace Ui {
 class Polyfit;
@@ -20,7 +21,9 @@ private slots:
     void on_buttonBox_clicked(QAbstractButton *button);
 
 private:
-    Ui::Polyfit *ui;
+    Ui::Polyfit     *ui;
+    polyfitdata_t   mProcessData[BLEND_END];
+    polyfitdata_t   mSaveData[BLEND_END];
 };
 
 #endif // POLYFIT_H

@@ -6,6 +6,7 @@ Polyfit::Polyfit(QWidget *parent) :
     ui(new Ui::Polyfit)
 {
     ui->setupUi(this);
+    this->setWindowTitle(tr("Polyfit"));
 }
 
 Polyfit::~Polyfit()
@@ -20,10 +21,12 @@ void Polyfit::on_buttonBox_clicked(QAbstractButton *button)
     switch (role)
     {
         case QDialogButtonBox::ApplyRole:
+
             break;
         case QDialogButtonBox::ResetRole:
             break;
         case QDialogButtonBox::YesRole:
+            this->close();
             break;
         default:
             break;

@@ -25,11 +25,14 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    polyfit.cpp
+    polyfit.cpp \
+    polyfitalgo.cpp
 
 HEADERS += \
         mainwindow.h \
-    polyfit.h
+    polyfit.h \
+    polyfitalgo.h \
+    blendcommon.h
 
 FORMS += \
         mainwindow.ui \

@@ -8,12 +8,14 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+
     mFrontImagePath.clear();
     mBackImagePath.clear();
     mLeftImagePath.clear();
     mRightImagePath.clear();
     mPPolyfitDialog = new Polyfit();
     ui->setupUi(this);
+    QWidget::showMaximized();
 }
 
 MainWindow::~MainWindow()

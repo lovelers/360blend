@@ -2,6 +2,7 @@
 #define POLYFIT_H
 
 #include <QDialog>
+#include <QDialogButtonBox>
 #include <QAbstractButton>
 #include "polyfitalgo.h"
 
@@ -13,6 +14,15 @@ class Polyfit : public QDialog
 {
     Q_OBJECT
 
+    enum PlotfitRole
+    {
+        Polyfit_Open    = QDialogButtonBox::ActionRole,
+        Polyfit_Save    = QDialogButtonBox::AcceptRole,
+        Polyfit_Reset   = QDialogButtonBox::ResetRole,
+        Polyfit_Exit    = QDialogButtonBox::YesRole,
+        Polyfit_Process = QDialogButtonBox::ApplyRole,
+        Polyfit_Invalid = QDialogButtonBox::InvalidRole,
+    };
 public:
     explicit Polyfit(QWidget *parent = nullptr);
     ~Polyfit();

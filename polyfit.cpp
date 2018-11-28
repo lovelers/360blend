@@ -1,12 +1,20 @@
 #include "polyfit.h"
 #include "ui_polyfit.h"
 #include <QDebug>
+#include <QPushButton>
 Polyfit::Polyfit(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Polyfit)
 {
+
+
     ui->setupUi(this);
     this->setWindowTitle(tr("Polyfit"));
+    ui->buttonBox->addButton(tr("Open"),static_cast<QDialogButtonBox::ButtonRole>(Polyfit_Open));
+    ui->buttonBox->addButton(tr("Save"), static_cast<QDialogButtonBox::ButtonRole>(Polyfit_Save));
+    ui->buttonBox->addButton(tr("Process"), static_cast<QDialogButtonBox::ButtonRole>(Polyfit_Process));
+    ui->buttonBox->addButton(tr("Reset"), static_cast<QDialogButtonBox::ButtonRole>(Polyfit_Reset));
+    ui->buttonBox->addButton(tr("Exit"), static_cast<QDialogButtonBox::ButtonRole>(Polyfit_Exit));
 }
 
 Polyfit::~Polyfit()
@@ -17,15 +25,18 @@ Polyfit::~Polyfit()
 
 void Polyfit::on_buttonBox_clicked(QAbstractButton *button)
 {
-    QDialogButtonBox::ButtonRole role = ui->buttonBox->buttonRole(button);
+    PlotfitRole role = static_cast<PlotfitRole>(ui->buttonBox->buttonRole(button));
     switch (role)
     {
-        case QDialogButtonBox::ApplyRole:
-
+        case Polyfit_Open:
             break;
-        case QDialogButtonBox::ResetRole:
+        case Polyfit_Save:
             break;
-        case QDialogButtonBox::YesRole:
+        case Polyfit_Reset:
+            break;
+        case Polyfit_Process:
+            break;
+        case Polyfit_Exit:
             this->close();
             break;
         default:

@@ -5,9 +5,13 @@
 #include <QImage>
 
 
-
+#if 0
 static sin_to_2order_curve_coff_t gFrontCoff    = {-1.232291, 1.232291, -0.014249, 1.3};
 static sin_to_2order_curve_coff_t gBackCoff     = {-1.232291,  1.232291, -0.014249, 1.3};
+#else
+static sin_to_2order_curve_coff_t gFrontCoff     = {-0.8215275,   0.8215275,  -0.0094991, 1.2};
+static sin_to_2order_curve_coff_t gBackCoff    = {-0.8215275,   0.8215275,  -0.0094991, 1.2};
+#endif
 static sin_to_2order_curve_coff_t gLeftCoff     = {-0.8215275,   0.8215275,  -0.0094991, 1.2};
 static sin_to_2order_curve_coff_t gRightCoff    = {-0.8215275,   0.8215275,  -0.0094991, 1.2};
 
@@ -49,7 +53,7 @@ void MainWindow::on_ProcessBtn_clicked()
         return;
     }
 
-    QImage imageBPolyfit = DoImagePloyFit(imageF, &gBackCoff);
+    QImage imageBPolyfit = DoImagePloyFit(imageB, &gBackCoff);
     imageBPolyfit.save("BackPolyfit.jpg");
     ui->labelBack->setPixmap(QPixmap::fromImage(imageBPolyfit));
 

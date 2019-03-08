@@ -26,13 +26,19 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     polyfit.cpp \
-    polyfitalgo.cpp
+    polyfitalgo.cpp \
+    polyfittablemodel.cpp \
+    layoutpersist.cpp \
+    polyfitlabel.cpp
 
 HEADERS += \
         mainwindow.h \
     polyfit.h \
     polyfitalgo.h \
-    blendcommon.h
+    blendcommon.h \
+    polyfittablemodel.h \
+    layoutpersist.h \
+    polyfitlabel.h
 
 FORMS += \
         mainwindow.ui \

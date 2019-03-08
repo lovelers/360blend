@@ -12,8 +12,8 @@
   </property>
   <property name="maximumSize">
    <size>
-    <width>640</width>
-    <height>480</height>
+    <width>1920</width>
+    <height>1280</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -22,6 +22,12 @@
   <layout class="QGridLayout" name="gridLayout_5">
    <item row="0" column="0">
     <widget class="QTabWidget" name="tabWidget">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="minimumSize">
       <size>
        <width>620</width>
@@ -30,12 +36,12 @@
      </property>
      <property name="maximumSize">
       <size>
-       <width>620</width>
-       <height>400</height>
+       <width>1920</width>
+       <height>900</height>
       </size>
      </property>
      <property name="currentIndex">
-      <number>3</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tabFront">
       <attribute name="title">
@@ -43,7 +49,7 @@
       </attribute>
       <layout class="QGridLayout" name="gridLayout_2">
        <item row="0" column="0">
-        <widget class="QLabel" name="labelFront">
+        <widget class="PolyfitLabel" name="labelFront">
          <property name="minimumSize">
           <size>
            <width>600</width>
@@ -62,88 +68,13 @@
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="QTableWidget" name="tableWidgetFront">
+        <widget class="QTableView" name="tableViewFront">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
-         <property name="minimumSize">
-          <size>
-           <width>600</width>
-           <height>100</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>600</width>
-           <height>100</height>
-          </size>
-         </property>
-         <property name="verticalScrollBarPolicy">
-          <enum>Qt::ScrollBarAlwaysOff</enum>
-         </property>
-         <property name="horizontalScrollBarPolicy">
-          <enum>Qt::ScrollBarAlwaysOff</enum>
-         </property>
-         <property name="sizeAdjustPolicy">
-          <enum>QAbstractScrollArea::AdjustIgnored</enum>
-         </property>
-         <property name="autoScroll">
-          <bool>false</bool>
-         </property>
-         <property name="autoScrollMargin">
-          <number>0</number>
-         </property>
-         <property name="editTriggers">
-          <set>QAbstractItemView::AllEditTriggers</set>
-         </property>
-         <property name="tabKeyNavigation">
-          <bool>false</bool>
-         </property>
-         <property name="showDropIndicator" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="dragDropOverwriteMode">
-          <bool>false</bool>
-         </property>
-         <property name="verticalScrollMode">
-          <enum>QAbstractItemView::ScrollPerItem</enum>
-         </property>
-         <property name="rowCount">
-          <number>4</number>
-         </property>
-         <property name="columnCount">
-          <number>8</number>
-         </property>
-         <attribute name="horizontalHeaderVisible">
-          <bool>false</bool>
-         </attribute>
-         <attribute name="horizontalHeaderDefaultSectionSize">
-          <number>72</number>
-         </attribute>
-         <attribute name="horizontalHeaderMinimumSectionSize">
-          <number>25</number>
-         </attribute>
-         <attribute name="verticalHeaderDefaultSectionSize">
-          <number>25</number>
-         </attribute>
-         <attribute name="verticalHeaderMinimumSectionSize">
-          <number>24</number>
-         </attribute>
-         <row/>
-         <row/>
-         <row/>
-         <row/>
-         <column/>
-         <column/>
-         <column/>
-         <column/>
-         <column/>
-         <column/>
-         <column/>
-         <column/>
         </widget>
        </item>
       </layout>
@@ -153,91 +84,6 @@
        <string>Back</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout">
-       <item row="1" column="0">
-        <widget class="QTableWidget" name="tableWidgetBack">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>600</width>
-           <height>100</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>600</width>
-           <height>100</height>
-          </size>
-         </property>
-         <property name="verticalScrollBarPolicy">
-          <enum>Qt::ScrollBarAlwaysOff</enum>
-         </property>
-         <property name="horizontalScrollBarPolicy">
-          <enum>Qt::ScrollBarAlwaysOff</enum>
-         </property>
-         <property name="sizeAdjustPolicy">
-          <enum>QAbstractScrollArea::AdjustIgnored</enum>
-         </property>
-         <property name="autoScroll">
-          <bool>false</bool>
-         </property>
-         <property name="autoScrollMargin">
-          <number>0</number>
-         </property>
-         <property name="editTriggers">
-          <set>QAbstractItemView::AllEditTriggers</set>
-         </property>
-         <property name="tabKeyNavigation">
-          <bool>false</bool>
-         </property>
-         <property name="showDropIndicator" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="dragDropOverwriteMode">
-          <bool>false</bool>
-         </property>
-         <property name="verticalScrollMode">
-          <enum>QAbstractItemView::ScrollPerItem</enum>
-         </property>
-         <property name="rowCount">
-          <number>4</number>
-         </property>
-         <property name="columnCount">
-          <number>8</number>
-         </property>
-         <attribute name="horizontalHeaderVisible">
-          <bool>false</bool>
-         </attribute>
-         <attribute name="horizontalHeaderDefaultSectionSize">
-          <number>72</number>
-         </attribute>
-         <attribute name="horizontalHeaderMinimumSectionSize">
-          <number>25</number>
-         </attribute>
-         <attribute name="verticalHeaderDefaultSectionSize">
-          <number>25</number>
-         </attribute>
-         <attribute name="verticalHeaderMinimumSectionSize">
-          <number>24</number>
-         </attribute>
-         <row/>
-         <row/>
-         <row/>
-         <row/>
-         <column/>
-         <column/>
-         <column/>
-         <column/>
-         <column/>
-         <column/>
-         <column/>
-         <column/>
-        </widget>
-       </item>
        <item row="0" column="0">
         <widget class="QLabel" name="labelBack">
          <property name="minimumSize">
@@ -256,6 +102,9 @@
           <string>TextLabel</string>
          </property>
         </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QTableView" name="tableViewBack"/>
        </item>
       </layout>
      </widget>
@@ -284,89 +133,7 @@
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="QTableWidget" name="tableWidgetLeft">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>600</width>
-           <height>100</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>600</width>
-           <height>100</height>
-          </size>
-         </property>
-         <property name="verticalScrollBarPolicy">
-          <enum>Qt::ScrollBarAlwaysOff</enum>
-         </property>
-         <property name="horizontalScrollBarPolicy">
-          <enum>Qt::ScrollBarAlwaysOff</enum>
-         </property>
-         <property name="sizeAdjustPolicy">
-          <enum>QAbstractScrollArea::AdjustIgnored</enum>
-         </property>
-         <property name="autoScroll">
-          <bool>false</bool>
-         </property>
-         <property name="autoScrollMargin">
-          <number>0</number>
-         </property>
-         <property name="editTriggers">
-          <set>QAbstractItemView::AllEditTriggers</set>
-         </property>
-         <property name="tabKeyNavigation">
-          <bool>false</bool>
-         </property>
-         <property name="showDropIndicator" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="dragDropOverwriteMode">
-          <bool>false</bool>
-         </property>
-         <property name="verticalScrollMode">
-          <enum>QAbstractItemView::ScrollPerItem</enum>
-         </property>
-         <property name="rowCount">
-          <number>4</number>
-         </property>
-         <property name="columnCount">
-          <number>8</number>
-         </property>
-         <attribute name="horizontalHeaderVisible">
-          <bool>false</bool>
-         </attribute>
-         <attribute name="horizontalHeaderDefaultSectionSize">
-          <number>72</number>
-         </attribute>
-         <attribute name="horizontalHeaderMinimumSectionSize">
-          <number>25</number>
-         </attribute>
-         <attribute name="verticalHeaderDefaultSectionSize">
-          <number>25</number>
-         </attribute>
-         <attribute name="verticalHeaderMinimumSectionSize">
-          <number>24</number>
-         </attribute>
-         <row/>
-         <row/>
-         <row/>
-         <row/>
-         <column/>
-         <column/>
-         <column/>
-         <column/>
-         <column/>
-         <column/>
-         <column/>
-         <column/>
-        </widget>
+        <widget class="QTableView" name="tableViewLeft"/>
        </item>
       </layout>
      </widget>
@@ -395,89 +162,7 @@
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="QTableWidget" name="tableWidgetRight">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>600</width>
-           <height>100</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>600</width>
-           <height>100</height>
-          </size>
-         </property>
-         <property name="verticalScrollBarPolicy">
-          <enum>Qt::ScrollBarAlwaysOff</enum>
-         </property>
-         <property name="horizontalScrollBarPolicy">
-          <enum>Qt::ScrollBarAlwaysOff</enum>
-         </property>
-         <property name="sizeAdjustPolicy">
-          <enum>QAbstractScrollArea::AdjustIgnored</enum>
-         </property>
-         <property name="autoScroll">
-          <bool>false</bool>
-         </property>
-         <property name="autoScrollMargin">
-          <number>0</number>
-         </property>
-         <property name="editTriggers">
-          <set>QAbstractItemView::AllEditTriggers</set>
-         </property>
-         <property name="tabKeyNavigation">
-          <bool>false</bool>
-         </property>
-         <property name="showDropIndicator" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="dragDropOverwriteMode">
-          <bool>false</bool>
-         </property>
-         <property name="verticalScrollMode">
-          <enum>QAbstractItemView::ScrollPerItem</enum>
-         </property>
-         <property name="rowCount">
-          <number>4</number>
-         </property>
-         <property name="columnCount">
-          <number>8</number>
-         </property>
-         <attribute name="horizontalHeaderVisible">
-          <bool>false</bool>
-         </attribute>
-         <attribute name="horizontalHeaderDefaultSectionSize">
-          <number>72</number>
-         </attribute>
-         <attribute name="horizontalHeaderMinimumSectionSize">
-          <number>25</number>
-         </attribute>
-         <attribute name="verticalHeaderDefaultSectionSize">
-          <number>25</number>
-         </attribute>
-         <attribute name="verticalHeaderMinimumSectionSize">
-          <number>24</number>
-         </attribute>
-         <row/>
-         <row/>
-         <row/>
-         <row/>
-         <column/>
-         <column/>
-         <column/>
-         <column/>
-         <column/>
-         <column/>
-         <column/>
-         <column/>
-        </widget>
+        <widget class="QTableView" name="tableViewRight"/>
        </item>
       </layout>
      </widget>
@@ -514,6 +199,13 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PolyfitLabel</class>
+   <extends>QLabel</extends>
+   <header location="global">polyfitlabel.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

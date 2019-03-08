@@ -3,15 +3,12 @@
 #include <QDebug>
 #include <QFileDialog>
 #include <QImage>
+#include <QDesktopWidget>
+#include "layoutpersist.h"
 
 
-#if 0
 static sin_to_2order_curve_coff_t gFrontCoff    = {-1.232291, 1.232291, -0.014249, 1.3};
 static sin_to_2order_curve_coff_t gBackCoff     = {-1.232291,  1.232291, -0.014249, 1.3};
-#else
-static sin_to_2order_curve_coff_t gFrontCoff     = {-0.8215275,   0.8215275,  -0.0094991, 1.2};
-static sin_to_2order_curve_coff_t gBackCoff    = {-0.8215275,   0.8215275,  -0.0094991, 1.2};
-#endif
 static sin_to_2order_curve_coff_t gLeftCoff     = {-0.8215275,   0.8215275,  -0.0094991, 1.2};
 static sin_to_2order_curve_coff_t gRightCoff    = {-0.8215275,   0.8215275,  -0.0094991, 1.2};
 
@@ -24,9 +21,14 @@ MainWindow::MainWindow(QWidget *parent) :
     mBackImagePath.clear();
     mLeftImagePath.clear();
     mRightImagePath.clear();
-    mPPolyfitDialog = new Polyfit();
+    mpPolyfitDialog = new Polyfit();
+
     ui->setupUi(this);
     QWidget::showMaximized();
+
+    int width   = QApplication::desktop()->screenGeometry(this).width();
+    int height  = QApplication::desktop()->screenGeometry(this).height();
+    LayoutPersist::getInstance()->setScreenSize(width, height);
 }
 
 MainWindow::~MainWindow()
@@ -53,7 +55,7 @@ void MainWindow::on_ProcessBtn_clicked()
         return;
     }
 
-    QImage imageBPolyfit = DoImagePloyFit(imageB, &gBackCoff);
+    QImage imageBPolyfit = DoImagePloyFit(imageF, &gBackCoff);
     imageBPolyfit.save("BackPolyfit.jpg");
     ui->labelBack->setPixmap(QPixmap::fromImage(imageBPolyfit));
 
@@ -123,10 +125,11 @@ void MainWindow::on_RightBtn_clicked()
 
 void MainWindow::on_actionPolyFit_triggered()
 {
-    if (nullptr != mPPolyfitDialog)
+    if (nullptr != mpPolyfitDialog)
     {
-        mPPolyfitDialog->show();
+        mpPolyfitDialog->myShow();
     }
+
 }
 
 QImage MainWindow::DoImagePloyFit(QImage image, sin_to_2order_curve_coff_t * coff)

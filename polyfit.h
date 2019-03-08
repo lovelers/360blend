@@ -5,7 +5,7 @@
 #include <QDialogButtonBox>
 #include <QAbstractButton>
 #include "polyfitalgo.h"
-
+#include "polyfittablemodel.h"
 namespace Ui {
 class Polyfit;
 }
@@ -27,13 +27,21 @@ public:
     explicit Polyfit(QWidget *parent = nullptr);
     ~Polyfit();
 
+    void myShow();
 private slots:
     void on_buttonBox_clicked(QAbstractButton *button);
 
 private:
-    Ui::Polyfit     *ui;
-    polyfitdata_t   mProcessData[BLEND_END];
-    polyfitdata_t   mSaveData[BLEND_END];
+    Ui::Polyfit         *ui;
+    polyfitdata_t       mProcessData[BLEND_END];
+    polyfitdata_t       mSaveData[BLEND_END];
+
+    PolyfitTableModel   *mpTableModelFront;
+    PolyfitTableModel   *mpTableModelBack;
+    PolyfitTableModel   *mpTableModelLeft;
+    PolyfitTableModel   *mpTableModelRight;
+
+    void                onPolyfitProcess();
 };
 
 #endif // POLYFIT_H

@@ -28,7 +28,7 @@ private:
     QString         mBackImagePath;
     QString         mLeftImagePath;
     QString         mRightImagePath;
-    Polyfit*        mPPolyfitDialog;
+    Polyfit*        mpPolyfitDialog;
 
     QImage          DoImagePloyFit(QImage image, sin_to_2order_curve_coff_t * coff);
 

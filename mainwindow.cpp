@@ -5,7 +5,7 @@
 #include <QImage>
 #include <QDesktopWidget>
 #include "layoutpersist.h"
-
+#include "polyfitalgo.h"
 
 static sin_to_2order_curve_coff_t gFrontCoff    = {-1.232291, 1.232291, -0.014249, 1.3};
 static sin_to_2order_curve_coff_t gBackCoff     = {-1.232291,  1.232291, -0.014249, 1.3};
@@ -46,7 +46,8 @@ void MainWindow::on_ProcessBtn_clicked()
         qDebug() <<" bad front image input" <<endl;
         return;
     }
-    QImage imageFPolyfit = DoImagePloyFit(imageF, &gFrontCoff);
+    //QImage imageFPolyfit = DoImagePloyFit(imageF, &gFrontCoff);
+    QImage imageFPolyfit = PolyfitProcess(imageF, POLYFIT_TYPE::FRONT);
     imageFPolyfit.save("FrongPolyfit.jpg");
     ui->labelFront->setPixmap(QPixmap::fromImage(imageFPolyfit));
     QImage imageB(mBackImagePath);

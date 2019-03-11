@@ -29,7 +29,7 @@ SOURCES += \
     polyfitalgo.cpp \
     polyfittablemodel.cpp \
     layoutpersist.cpp \
-    polyfitlabel.cpp
+    polyfitlabel.cpp \
 
 HEADERS += \
         mainwindow.h \
@@ -38,7 +38,7 @@ HEADERS += \
     blendcommon.h \
     polyfittablemodel.h \
     layoutpersist.h \
-    polyfitlabel.h
+    polyfitlabel.h \
 
 FORMS += \
         mainwindow.ui \

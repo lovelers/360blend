@@ -2,14 +2,8 @@
 #define POLYFITALGO_H
 
 #include "blendcommon.h"
+#include <QImage>
 
-class PolyfitAlgo
-{
-
-private:
-    PolyfitAlgo();
-public:
-    //static void Process(polyfitdata_t *data);
-};
+extern QImage PolyfitProcess(QImage input, POLYFIT_TYPE type);
 
 #endif // POLYFITALGO_H

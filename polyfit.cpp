@@ -16,7 +16,8 @@ Polyfit::Polyfit(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowTitle(tr("Polyfit"));
-    this->setWindowFlags(Qt::Popup);
+    this->setWindowFlags(Qt::WindowStaysOnTopHint);
+    this->setModal(true);
 
     ui->buttonBox->addButton(tr("Open"),static_cast<QDialogButtonBox::ButtonRole>(Polyfit_Open));
     ui->buttonBox->addButton(tr("Save"), static_cast<QDialogButtonBox::ButtonRole>(Polyfit_Save));

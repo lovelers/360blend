@@ -16,6 +16,9 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+    int width   = QApplication::desktop()->screenGeometry(this).width();
+    int height  = QApplication::desktop()->screenGeometry(this).height();
+    LayoutPersist::getInstance()->setScreenSize(width, height);
 
     mFrontImagePath.clear();
     mBackImagePath.clear();
@@ -26,9 +29,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     QWidget::showMaximized();
 
-    int width   = QApplication::desktop()->screenGeometry(this).width();
-    int height  = QApplication::desktop()->screenGeometry(this).height();
-    LayoutPersist::getInstance()->setScreenSize(width, height);
+
 }
 
 MainWindow::~MainWindow()

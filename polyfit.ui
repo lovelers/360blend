@@ -53,7 +53,7 @@
          <property name="minimumSize">
           <size>
            <width>600</width>
-           <height>250</height>
+           <height>100</height>
           </size>
          </property>
          <property name="maximumSize">
@@ -75,6 +75,9 @@
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <attribute name="horizontalHeaderVisible">
+          <bool>false</bool>
+         </attribute>
         </widget>
        </item>
       </layout>
@@ -85,11 +88,11 @@
       </attribute>
       <layout class="QGridLayout" name="gridLayout">
        <item row="0" column="0">
-        <widget class="QLabel" name="labelBack">
+        <widget class="PolyfitLabel" name="labelBack">
          <property name="minimumSize">
           <size>
            <width>600</width>
-           <height>250</height>
+           <height>100</height>
           </size>
          </property>
          <property name="maximumSize">
@@ -104,7 +107,14 @@
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="QTableView" name="tableViewBack"/>
+        <widget class="QTableView" name="tableViewBack">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
@@ -114,11 +124,11 @@
       </attribute>
       <layout class="QGridLayout" name="gridLayout_3">
        <item row="0" column="0">
-        <widget class="QLabel" name="labelLeft">
+        <widget class="PolyfitLabel" name="labelLeft">
          <property name="minimumSize">
           <size>
            <width>600</width>
-           <height>250</height>
+           <height>100</height>
           </size>
          </property>
          <property name="maximumSize">
@@ -133,7 +143,14 @@
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="QTableView" name="tableViewLeft"/>
+        <widget class="QTableView" name="tableViewLeft">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
@@ -142,12 +159,22 @@
        <string>Right</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_4">
-       <item row="0" column="0">
-        <widget class="QLabel" name="labelRight">
+       <item row="2" column="0">
+        <widget class="QTableView" name="tableViewRight">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="PolyfitLabel" name="labelRight">
          <property name="minimumSize">
           <size>
            <width>600</width>
-           <height>250</height>
+           <height>100</height>
           </size>
          </property>
          <property name="maximumSize">
@@ -160,9 +187,6 @@
           <string>TextLabel</string>
          </property>
         </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QTableView" name="tableViewRight"/>
        </item>
       </layout>
      </widget>

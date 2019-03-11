@@ -18,7 +18,7 @@ PolyfitTableModel::~PolyfitTableModel()
         delete mpPrivData;
         mpPrivData = nullptr;
     }
-    QAbstractTableModel::~QAbstractTableModel();
+    //QAbstractTableModel::~QAbstractTableModel();
 }
 
 void PolyfitTableModel::getPolyFitData(float **data, int *size)

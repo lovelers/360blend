@@ -32,10 +32,12 @@ private slots:
     void on_buttonBox_clicked(QAbstractButton *button);
 
 private:
+    void onPolyfitProces();
+    void onPolyfitOpen();
+    void onPolyfitSave();
+    void onPolyfitReset();
+private:
     Ui::Polyfit         *ui;
-    polyfitdata_t       mProcessData[BLEND_END];
-    polyfitdata_t       mSaveData[BLEND_END];
-
     PolyfitTableModel   *mpTableModelFront;
     PolyfitTableModel   *mpTableModelBack;
     PolyfitTableModel   *mpTableModelLeft;

@@ -9,7 +9,7 @@ class PolyfitAlgo
 private:
     PolyfitAlgo();
 public:
-    static void Process(polyfitdata_t *data);
+    //static void Process(polyfitdata_t *data);
 };
 
 #endif // POLYFITALGO_H

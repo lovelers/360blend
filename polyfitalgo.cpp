@@ -9,6 +9,7 @@ typedef struct
 } polyfitdata_t;
 
 static polyfitdata_t s_front = {5, 0.43, -6.1221456, 12.2442667, -9.3446108, 3.2224832, 0.0012819};
+
 QImage PolyfitProcess(QImage input, POLYFIT_TYPE type)
 {
     polyfitdata_t *data = nullptr;
@@ -28,7 +29,13 @@ QImage PolyfitProcess(QImage input, POLYFIT_TYPE type)
 
     int width   = input.width();
     int height  = input.height();
-    int height1 = static_cast<int>((data->peak+1.f) * height);
+
+    double peak = data->coff[0] * qPow(0.5, 4) +
+            data->coff[1] * qPow(0.5, 3) +
+            data->coff[2] * qPow(0.5, 2) +
+            data->coff[3] * qPow(0.5, 1) +
+            data->coff[4] * qPow(0.5, 0);
+    int height1 = static_cast<int>((peak + 1.0) * height);
 
     qDebug("dump data:");
     qDebug("            depth: %d", data->depth);
@@ -54,7 +61,7 @@ QImage PolyfitProcess(QImage input, POLYFIT_TYPE type)
                     data->coff[4] * qPow(x, 0);
         }
 
-        int hbase   = static_cast<int>(y * height);
+        int hbase   = static_cast<int>((peak - y) * height);
         if (w > 500 && w < 600) qDebug("x = %lf, y = %lf, hBase = %d", x, y, hbase);
         if (hbase < 0) hbase = 0;
 
